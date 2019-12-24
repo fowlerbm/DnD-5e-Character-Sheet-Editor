@@ -11,37 +11,37 @@ VERSION_PATCH = 1
 
 
 def create_qt_text(name, x, y, width, height, parent):
-    txt_box = QtWidgets.QPlainTextEdit(parent)
-    txt_box.setGeometry(QtCore.QRect(x, y, width, height))
-    txt_box.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-    txt_box.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-    txt_box.setObjectName(name)
-    return txt_box
+    txtbox = QtWidgets.QPlainTextEdit(parent)
+    txtbox.setGeometry(QtCore.QRect(x, y, width, height))
+    txtbox.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+    txtbox.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+    txtbox.setObjectName(name)
+    return txtbox
 
 
 def create_qt_chkbox(name, x, y, width, height, parent):
-    txt_box = QtWidgets.QCheckBox(parent)
-    txt_box.setGeometry(QtCore.QRect(x, y, width, height))
-    txt_box.setObjectName(name)
-    return txt_box
+    chkbox = QtWidgets.QCheckBox(parent)
+    chkbox.setGeometry(QtCore.QRect(x, y, width, height))
+    chkbox.setObjectName(name)
+    return chkbox
 
 
 def create_qt_label(name, x, y, width, height, parent):
-    txt_box = QtWidgets.QLabel(parent)
-    txt_box.setGeometry(QtCore.QRect(x, y, width, height))
-    txt_box.setObjectName(name)
-    return txt_box
+    label = QtWidgets.QLabel(parent)
+    label.setGeometry(QtCore.QRect(x, y, width, height))
+    label.setObjectName(name)
+    return label
 
 
 def create_qt_group(name, x, y, width, height, parent):
-    txt_box = QtWidgets.QGroupBox(parent)
-    txt_box.setGeometry(QtCore.QRect(x, y, width, height))
-    txt_box.setTitle("")
-    txt_box.setObjectName(name)
-    return txt_box
+    grp_box = QtWidgets.QGroupBox(parent)
+    grp_box.setGeometry(QtCore.QRect(x, y, width, height))
+    grp_box.setTitle("")
+    grp_box.setObjectName(name)
+    return grp_box
 
 
-class main(QMainWindow):
+class Main(QMainWindow):
 
     def load_file(self):
         dialog = QFileDialog()
@@ -237,7 +237,7 @@ class main(QMainWindow):
         self.resize(771, 902)
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
-        # Add all groupboxes
+        # Add all group boxes
         self.grpSave = create_qt_group("grpSave", 100, 210, 225, 147, self.centralwidget)
         self.grpStats = create_qt_group("grpStats", 10, 130, 81, 652, self.centralwidget)
         self.grpFluff = create_qt_group("grpFluff", 580, 130, 181, 341, self.centralwidget)
@@ -447,11 +447,11 @@ class main(QMainWindow):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
-        self.retranslateUi(self)
+        self.retranslate_ui(self)
 
-    def retranslateUi(self, MainWindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "DnD 5e Character Sheet"))
+        main_window.setWindowTitle(_translate("MainWindow", "DnD 5e Character Sheet"))
         self.label_21.setText(_translate("MainWindow", "Hit Points"))
         self.label_20.setText(_translate("MainWindow", "Max Hit Points"))
         self.label_22.setText(_translate("MainWindow", "Temporary HP"))
@@ -523,6 +523,6 @@ class main(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
-    window = main()
+    window = Main()
     window.show()
     sys.exit(app.exec_())

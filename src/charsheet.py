@@ -4,6 +4,11 @@ import json
 from PySide2 import QtWidgets, QtCore, QtGui
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QDialog
 
+# Global Version Variables
+VERSION_MAJOR = 0
+VERSION_MINOR = 1
+VERSION_PATCH = 1
+
 
 def create_qt_text(name, x, y, width, height, parent):
     txt_box = QtWidgets.QPlainTextEdit(parent)
@@ -153,72 +158,56 @@ class main(QMainWindow):
 
     def save_file(self):
         values = {"TempHp": self.txtTempHp.toPlainText(), "MaxHp": self.txtMaxHp.toPlainText(),
-                  "Hp": self.txtHp.toPlainText(),
+                  "Hp": self.txtHp.toPlainText(), "Armor": self.txtArmor.toPlainText(),
                   "Init": self.txtInit.toPlainText(), "Speed": self.txtSpeed.toPlainText(),
-                  "Armor": self.txtArmor.toPlainText(),
                   "DthSave1": self.chkDthSave1.isChecked(), "DthSave2": self.chkDthSave2.isChecked(),
-                  "DthSave3": self.chkDthSave3.isChecked(),
                   "DthFail2": self.chkDthFail2.isChecked(), "DthFail3": self.chkDthFail3.isChecked(),
-                  "DthFail1": self.chkDthFail1.isChecked(),
+                  "DthFail1": self.chkDthFail1.isChecked(), "DthSave3": self.chkDthSave3.isChecked(),
                   "HitDie": self.txtHitDie.toPlainText(), "TotalHitDie": self.txtTotalHitDie.toPlainText(),
-                  "StatStr": self.txtStatStr.toPlainText(),
+                  "StatStr": self.txtStatStr.toPlainText(), "StatDex": self.txtStatDex.toPlainText(),
                   "ScoreStr": self.txtScoreStr.toPlainText(), "ScoreDex": self.txtScoreDex.toPlainText(),
-                  "StatDex": self.txtStatDex.toPlainText(),
                   "StatCon": self.txtStatCon.toPlainText(), "ScoreCon": self.txtScoreCon.toPlainText(),
-                  "ScoreInt": self.txtScoreInt.toPlainText(),
                   "StatInt": self.txtStatInt.toPlainText(), "ScoreWis": self.txtScoreWis.toPlainText(),
-                  "StatWis": self.txtStatWis.toPlainText(),
+                  "StatWis": self.txtStatWis.toPlainText(), "ScoreInt": self.txtScoreInt.toPlainText(),
                   "ScoreChar": self.txtScoreChar.toPlainText(), "StatChar": self.txtStatChar.toPlainText(),
-                  "Bonds": self.txtBonds.toPlainText(),
+                  "Bonds": self.txtBonds.toPlainText(), "Personality": self.txtPersonality.toPlainText(),
                   "Ideals": self.txtIdeals.toPlainText(), "Flaws": self.txtFlaws.toPlainText(),
-                  "Personality": self.txtPersonality.toPlainText(),
                   "Exp": self.txtExp.toPlainText(), "Align": self.txtAlign.toPlainText(),
-                  "Background": self.txtBackground.toPlainText(),
                   "Class": self.txtClass.toPlainText(), "Player": self.txtPlayer.toPlainText(),
-                  "Race": self.txtRace.toPlainText(),
+                  "Race": self.txtRace.toPlainText(), "Background": self.txtBackground.toPlainText(),
                   "Insperation": self.txtInsperation.toPlainText(), "ProfBonus": self.txtProfBonus.toPlainText(),
-                  "CharName": self.txtCharName.toPlainText(),
                   "SaveChar": self.txtSaveChar.toPlainText(), "SaveIntProf": self.chkSaveInt.isChecked(),
-                  "SaveDexProf": self.chkSaveDex.isChecked(),
+                  "SaveDexProf": self.chkSaveDex.isChecked(), "CharName": self.txtCharName.toPlainText(),
                   "SaveCharProf": self.chkSaveChar.isChecked(), "SaveInt": self.txtSaveInt.toPlainText(),
-                  "SaveStr": self.txtSaveStr.toPlainText(),
                   "SaveWisProf": self.chkSaveWis.isChecked(), "SaveConProf": self.chkSaveCon.isChecked(),
-                  "SaveCon": self.txtSaveCon.toPlainText(),
+                  "SaveCon": self.txtSaveCon.toPlainText(), "SaveStr": self.txtSaveStr.toPlainText(),
                   "SaveDex": self.txtSaveDex.toPlainText(), "SaveWis": self.txtSaveWis.toPlainText(),
-                  "SaveStrProf": self.chkSaveStr.isChecked(),
                   "SkillAcroProf": self.chkSkillAcro.isChecked(), "SkillDec": self.txtSkillDec.toPlainText(),
-                  "SkillAcro": self.txtSkillAcro.toPlainText(),
+                  "SkillAcro": self.txtSkillAcro.toPlainText(), "SaveStrProf": self.chkSaveStr.isChecked(),
                   "SkillAnimProf": self.chkSkillAnim.isChecked(), "SkillArc": self.txtSkillArc.toPlainText(),
-                  "SkillArcProf": self.chkSkillArc.isChecked(),
                   "SkillAthProf": self.chkSkillAth.isChecked(), "SkillHistProf": self.chkSkillHist.isChecked(),
-                  "SkillAth": self.txtSkillAth.toPlainText(),
+                  "SkillAth": self.txtSkillAth.toPlainText(), "SkillArcProf": self.chkSkillArc.isChecked(),
                   "SkillDecProf": self.chkSkillDec.isChecked(), "SkillHist": self.txtSkillHist.toPlainText(),
-                  "SkillAnim": self.txtSkillAnim.toPlainText(),
                   "SkillInsProf": self.chkSkillIns.isChecked(), "SkillInv": self.txtSkillInv.toPlainText(),
-                  "SkillNat": self.txtSkillNat.toPlainText(),
+                  "SkillNat": self.txtSkillNat.toPlainText(), "SkillAnim": self.txtSkillAnim.toPlainText(),
                   "SkillMedProf": self.chkSkillMed.isChecked(), "SkillPerc": self.txtSkillPerc.toPlainText(),
-                  "SkillInti": self.chkSkillInti.isChecked(),
                   "SkillNatProf": self.chkSkillNat.isChecked(), "SkillPercProf": self.chkSkillPerc.isChecked(),
-                  "SkillInt": self.txtSkillInt.toPlainText(),
+                  "SkillInt": self.txtSkillInt.toPlainText(), "SkillInti": self.chkSkillInti.isChecked(),
                   "SkillMed": self.txtSkillMed.toPlainText(), "SkillInvProf": self.chkSkillInv.isChecked(),
-                  "SkillIns": self.txtSkillIns.toPlainText(),
                   "SkillPerf": self.txtSkillPerf.toPlainText(), "SkillStealth": self.txtSkillStealth.toPlainText(),
-                  "SkillRelProf": self.chkSkillRel.isChecked(),
+                  "SkillRelProf": self.chkSkillRel.isChecked(), "SkillIns": self.txtSkillIns.toPlainText(),
                   "SkillSoh": self.txtSkillSoh.toPlainText(), "SkillSte": self.chkSkillSte.isChecked(),
-                  "SkillSurvProf": self.chkSkillSurv.isChecked(),
                   "SkillPersProf": self.chkSkillPers.isChecked(), "SkillSurv": self.txtSkillSurv.toPlainText(),
-                  "SkillSohProf": self.chkSkillSoh.isChecked(),
+                  "SkillSohProf": self.chkSkillSoh.isChecked(), "SkillSurvProf": self.chkSkillSurv.isChecked(),
                   "SkillRel": self.txtSkillRel.toPlainText(), "SkillPerfProf": self.chkSkillPerf.isChecked(),
-                  "SkillPers": self.txtSkillPers.toPlainText(),
                   "FeatsTraits": self.txtFeatsTraits.toPlainText(), "PasWis": self.txtPasWis.toPlainText(),
-                  "ProfLang": self.txtProfLang.toPlainText(),
+                  "ProfLang": self.txtProfLang.toPlainText(), "SkillPers": self.txtSkillPers.toPlainText(),
                   "Equipment": self.txtEquipment.toPlainText(), "AtkType1": self.txtAtkType1.toPlainText(),
-                  "AtkType2": self.txtAtkType2.toPlainText(),
                   "AtkType3": self.txtAtkType3.toPlainText(), "AtkBonus3": self.txtAtkBonus3.toPlainText(),
-                  "AtkBonus2": self.txtAtkBonus2.toPlainText(),
+                  "AtkBonus2": self.txtAtkBonus2.toPlainText(), "AtkType2": self.txtAtkType2.toPlainText(),
                   "AtkBonus1": self.txtAtkBonus1.toPlainText(), "AtkName2": self.txtAtkName2.toPlainText(),
-                  "AtkName1": self.txtAtkName1.toPlainText(),
-                  "AtkName3": self.txtAtkName3.toPlainText(), "AtksSpells": self.txtAtksSpells.toPlainText()}
+                  "AtkName1": self.txtAtkName1.toPlainText(), "AtkName3": self.txtAtkName3.toPlainText(),
+                  "AtksSpells": self.txtAtksSpells.toPlainText()}
         dialog = QFileDialog()
         dialog.setFilter(dialog.filter() | QtCore.QDir.Hidden)
         dialog.setDefaultSuffix('json')
@@ -238,7 +227,8 @@ class main(QMainWindow):
         my_dialog.setWindowTitle("About")
         my_dialog.setGeometry(0, 0, 250, 100)
         label = create_qt_label("aboutLabel", 50, 0, 200, 100, my_dialog)
-        label.setText("DnD 5e Character sheet editor\nVersion 0.1.0")
+        label.setText("DnD 5e Character sheet editor" + "\n"
+                      "Version: {0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH))
         my_dialog.exec_()  # blocks all other windows until this window is closed.
 
     def __init__(self):

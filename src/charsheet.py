@@ -10,6 +10,19 @@ VERSION_MINOR = 1
 VERSION_PATCH = 1
 
 
+def parse_version(ver_str):
+    version = []
+    str_split = ver_str.split(".")
+    if len(str_split) != 3:
+        raise RuntimeError("Provided version string is malformed: Missing version numbers")
+    try:
+        for y in str_split.split("."):
+            version.append(int(y))
+    except ValueError:
+        raise RuntimeError("Provided version string is malformed: value is not a valid number")
+    return version
+
+
 def create_qt_text(name, x, y, width, height, parent):
     txtbox = QtWidgets.QPlainTextEdit(parent)
     txtbox.setGeometry(QtCore.QRect(x, y, width, height))
@@ -155,6 +168,11 @@ class Main(QMainWindow):
             self.txtAtkName1.setPlainText(data["AtkName1"])
             self.txtAtkName3.setPlainText(data["AtkName3"])
             self.txtAtksSpells.setPlainText(data["AtksSpells"])
+            self.txtCurCP.setPlainText(data["Copper"])
+            self.txtCurSP.setPlainText(data["Silver"])
+            self.txtCurEP.setPlainText(data["Electrum"])
+            self.txtCurGP.setPlainText(data["Gold"])
+            self.txtCurPP.setPlainText(data["Platinum"])
 
     def save_file(self):
         values = {"TempHp": self.txtTempHp.toPlainText(), "MaxHp": self.txtMaxHp.toPlainText(),
@@ -207,7 +225,11 @@ class Main(QMainWindow):
                   "AtkBonus2": self.txtAtkBonus2.toPlainText(), "AtkType2": self.txtAtkType2.toPlainText(),
                   "AtkBonus1": self.txtAtkBonus1.toPlainText(), "AtkName2": self.txtAtkName2.toPlainText(),
                   "AtkName1": self.txtAtkName1.toPlainText(), "AtkName3": self.txtAtkName3.toPlainText(),
-                  "AtksSpells": self.txtAtksSpells.toPlainText()}
+                  "AtksSpells": self.txtAtksSpells.toPlainText(), "Copper": self.txtCurCP.toPlainText(),
+                  "Silver": self.txtCurSP.toPlainText(),  "Electrum": self.txtCurEP.toPlainText(),
+                  "Gold": self.txtCurGP.toPlainText(), "Platinum": self.txtCurPP.toPlainText(),
+                  "version": "{0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)}
+
         dialog = QFileDialog()
         dialog.setFilter(dialog.filter() | QtCore.QDir.Hidden)
         dialog.setDefaultSuffix('json')
@@ -399,8 +421,18 @@ class Main(QMainWindow):
         self.label_54 = create_qt_label("label_54", 100, 30, 171, 16, self.grpPsvWis)
         self.label_56 = create_qt_label("label_56", 14, 160, 151, 16, self.grpProf)
         self.txtProfLang = create_qt_text("txtProfLang", 10, 10, 161, 151, self.grpProf)
-        self.label_57 = create_qt_label("label_57", 80, 210, 61, 16, self.grpEquip)
-        self.txtEquipment = create_qt_text("txtEquipment", 10, 10, 221, 201, self.grpEquip)
+        self.label_57 = create_qt_label("label_57", 114, 210, 61, 16, self.grpEquip)
+        self.txtEquipment = create_qt_text("txtEquipment", 60, 10, 171, 201, self.grpEquip)
+        self.txtCurCP = create_qt_text("txtCurCP", 10, 20, 41, 21, self.grpEquip)
+        self.txtCurSP = create_qt_text("txtCurSP", 10, 60, 41, 21, self.grpEquip)
+        self.txtCurEP = create_qt_text("txtCurEP", 10, 100, 41, 21, self.grpEquip)
+        self.txtCurGP = create_qt_text("txtCurGP", 10, 140, 41, 21, self.grpEquip)
+        self.txtCurPP = create_qt_text("txtCurPP", 10, 180, 41, 21, self.grpEquip)
+        self.label_62 = create_qt_label("label_62", 24, 40, 16, 16, self.grpEquip)
+        self.label_63 = create_qt_label("label_63", 24, 80, 16, 16, self.grpEquip)
+        self.label_64 = create_qt_label("label_64", 24, 120, 16, 16, self.grpEquip)
+        self.label_65 = create_qt_label("label_65", 24, 160, 16, 16, self.grpEquip)
+        self.label_66 = create_qt_label("label_66", 24, 200, 16, 16, self.grpEquip)
         self.label_58 = create_qt_label("label_58", 60, 200, 131, 16, self.grpAtk)
         self.txtAtkType1 = create_qt_text("txtAtkType1", 143, 20, 91, 21, self.grpAtk)
         self.txtAtkType2 = create_qt_text("txtAtkType2", 143, 44, 91, 21, self.grpAtk)
@@ -513,6 +545,11 @@ class Main(QMainWindow):
         self.label_59.setText(_translate("MainWindow", "Name"))
         self.label_60.setText(_translate("MainWindow", "Bonus"))
         self.label_61.setText(_translate("MainWindow", "Damage Type"))
+        self.label_62.setText(_translate("MainWindow", "CP"))
+        self.label_63.setText(_translate("MainWindow", "SP"))
+        self.label_64.setText(_translate("MainWindow", "EP"))
+        self.label_65.setText(_translate("MainWindow", "GP"))
+        self.label_66.setText(_translate("MainWindow", "PP"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionLoad.setText(_translate("MainWindow", "Load"))

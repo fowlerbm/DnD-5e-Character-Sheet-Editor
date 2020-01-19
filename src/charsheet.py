@@ -250,6 +250,7 @@ class Main(QMainWindow):
         my_dialog.setGeometry(0, 0, 250, 100)
         label = create_qt_label("aboutLabel", 50, 0, 200, 100, my_dialog)
         label.setText("DnD 5e Character sheet editor" + "\n"
+                      "folderisland.(com/net)" + "\n"
                       "Version: {0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH))
         my_dialog.exec_()  # blocks all other windows until this window is closed.
 

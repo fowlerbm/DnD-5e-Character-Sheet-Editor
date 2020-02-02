@@ -6,8 +6,8 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QDialog
 
 # Global Version Variables
 VERSION_MAJOR = 0
-VERSION_MINOR = 1
-VERSION_PATCH = 1
+VERSION_MINOR = 2
+VERSION_PATCH = 0
 
 
 def parse_version(ver_str):
@@ -78,11 +78,11 @@ class Main(QMainWindow):
         values = {"version": "{0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)}
 
         for key in self.controls:
-                control = self.controls[key]
-                if type(control) == QtWidgets.QPlainTextEdit:
-                    values[key] = control.toPlainText()
-                elif type(control) == QtWidgets.QCheckBox:
-                    values[key] = control.isChecked()
+            control = self.controls[key]
+            if type(control) == QtWidgets.QPlainTextEdit:
+                values[key] = control.toPlainText()
+            elif type(control) == QtWidgets.QCheckBox:
+                values[key] = control.isChecked()
 
         dialog = QFileDialog()
         dialog.setFilter(dialog.filter() | QtCore.QDir.Hidden)

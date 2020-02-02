@@ -67,168 +67,22 @@ class Main(QMainWindow):
             input_file = open(dialog.selectedFiles()[0], "r")
             input_data = input_file.read()
             data = json.loads(input_data)
-            self.txtTempHp.setPlainText(data["TempHp"])
-            self.txtMaxHp.setPlainText(data["MaxHp"])
-            self.txtHp.setPlainText(data["Hp"])
-            self.txtInit.setPlainText(data["Init"])
-            self.txtSpeed.setPlainText(data["Speed"])
-            self.txtArmor.setPlainText(data["Armor"])
-            self.chkDthSave1.setChecked(data["DthSave1"])
-            self.chkDthSave2.setChecked(data["DthSave2"])
-            self.chkDthSave3.setChecked(data["DthSave3"])
-            self.chkDthFail2.setChecked(data["DthFail2"])
-            self.chkDthFail3.setChecked(data["DthFail3"])
-            self.chkDthFail1.setChecked(data["DthFail1"])
-            self.txtHitDie.setPlainText(data["HitDie"])
-            self.txtTotalHitDie.setPlainText(data["TotalHitDie"])
-            self.txtStatStr.setPlainText(data["StatStr"])
-            self.txtScoreStr.setPlainText(data["ScoreStr"])
-            self.txtScoreDex.setPlainText(data["ScoreDex"])
-            self.txtStatDex.setPlainText(data["StatDex"])
-            self.txtStatCon.setPlainText(data["StatCon"])
-            self.txtScoreCon.setPlainText(data["ScoreCon"])
-            self.txtScoreInt.setPlainText(data["ScoreInt"])
-            self.txtStatInt.setPlainText(data["StatInt"])
-            self.txtScoreWis.setPlainText(data["ScoreWis"])
-            self.txtStatWis.setPlainText(data["StatWis"])
-            self.txtScoreChar.setPlainText(data["ScoreChar"])
-            self.txtStatChar.setPlainText(data["StatChar"])
-            self.txtBonds.setPlainText(data["Bonds"])
-            self.txtIdeals.setPlainText(data["Ideals"])
-            self.txtFlaws.setPlainText(data["Flaws"])
-            self.txtPersonality.setPlainText(data["Personality"])
-            self.txtExp.setPlainText(data["Exp"])
-            self.txtAlign.setPlainText(data["Align"])
-            self.txtBackground.setPlainText(data["Background"])
-            self.txtClass.setPlainText(data["Class"])
-            self.txtPlayer.setPlainText(data["Player"])
-            self.txtRace.setPlainText(data["Race"])
-            self.txtInsperation.setPlainText(data["Insperation"])
-            self.txtProfBonus.setPlainText(data["ProfBonus"])
-            self.txtCharName.setPlainText(data["CharName"])
-            self.txtSaveChar.setPlainText(data["SaveChar"])
-            self.chkSaveInt.setChecked(data["SaveIntProf"])
-            self.chkSaveDex.setChecked(data["SaveDexProf"])
-            self.chkSaveChar.setChecked(data["SaveCharProf"])
-            self.txtSaveInt.setPlainText(data["SaveInt"])
-            self.txtSaveStr.setPlainText(data["SaveStr"])
-            self.chkSaveWis.setChecked(data["SaveWisProf"])
-            self.chkSaveCon.setChecked(data["SaveConProf"])
-            self.txtSaveCon.setPlainText(data["SaveCon"])
-            self.txtSaveDex.setPlainText(data["SaveDex"])
-            self.txtSaveWis.setPlainText(data["SaveWis"])
-            self.chkSaveStr.setChecked(data["SaveStrProf"])
-            self.chkSkillAcro.setChecked(data["SkillAcroProf"])
-            self.txtSkillDec.setPlainText(data["SkillDec"])
-            self.txtSkillAcro.setPlainText(data["SkillAcro"])
-            self.chkSkillAnim.setChecked(data["SkillAnimProf"])
-            self.txtSkillArc.setPlainText(data["SkillArc"])
-            self.chkSkillArc.setChecked(data["SkillArcProf"])
-            self.chkSkillAth.setChecked(data["SkillAthProf"])
-            self.chkSkillHist.setChecked(data["SkillHistProf"])
-            self.txtSkillAth.setPlainText(data["SkillAth"])
-            self.chkSkillDec.setChecked(data["SkillDecProf"])
-            self.txtSkillHist.setPlainText(data["SkillHist"])
-            self.txtSkillAnim.setPlainText(data["SkillAnim"])
-            self.chkSkillIns.setChecked(data["SkillInsProf"])
-            self.txtSkillInv.setPlainText(data["SkillInv"])
-            self.txtSkillNat.setPlainText(data["SkillNat"])
-            self.chkSkillMed.setChecked(data["SkillMedProf"])
-            self.txtSkillPerc.setPlainText(data["SkillPerc"])
-            self.chkSkillInti.setChecked(data["SkillInti"])
-            self.chkSkillNat.setChecked(data["SkillNatProf"])
-            self.chkSkillPerc.setChecked(data["SkillPercProf"])
-            self.txtSkillInt.setPlainText(data["SkillInt"])
-            self.txtSkillMed.setPlainText(data["SkillMed"])
-            self.chkSkillInv.setChecked(data["SkillInvProf"])
-            self.txtSkillIns.setPlainText(data["SkillIns"])
-            self.txtSkillPerf.setPlainText(data["SkillPerf"])
-            self.txtSkillStealth.setPlainText(data["SkillStealth"])
-            self.chkSkillRel.setChecked(data["SkillRelProf"])
-            self.txtSkillSoh.setPlainText(data["SkillSoh"])
-            self.chkSkillSte.setChecked(data["SkillSte"])
-            self.chkSkillSurv.setChecked(data["SkillSurvProf"])
-            self.chkSkillPers.setChecked(data["SkillPersProf"])
-            self.txtSkillSurv.setPlainText(data["SkillSurv"])
-            self.chkSkillSoh.setChecked(data["SkillSohProf"])
-            self.txtSkillRel.setPlainText(data["SkillRel"])
-            self.chkSkillPerf.setChecked(data["SkillPerfProf"])
-            self.txtSkillPers.setPlainText(data["SkillPers"])
-            self.txtFeatsTraits.setPlainText(data["FeatsTraits"])
-            self.txtPasWis.setPlainText(data["PasWis"])
-            self.txtProfLang.setPlainText(data["ProfLang"])
-            self.txtEquipment.setPlainText(data["Equipment"])
-            self.txtAtkType1.setPlainText(data["AtkType1"])
-            self.txtAtkType2.setPlainText(data["AtkType2"])
-            self.txtAtkType3.setPlainText(data["AtkType3"])
-            self.txtAtkBonus3.setPlainText(data["AtkBonus3"])
-            self.txtAtkBonus2.setPlainText(data["AtkBonus2"])
-            self.txtAtkBonus1.setPlainText(data["AtkBonus1"])
-            self.txtAtkName2.setPlainText(data["AtkName2"])
-            self.txtAtkName1.setPlainText(data["AtkName1"])
-            self.txtAtkName3.setPlainText(data["AtkName3"])
-            self.txtAtksSpells.setPlainText(data["AtksSpells"])
-            self.txtCurCP.setPlainText(data["Copper"])
-            self.txtCurSP.setPlainText(data["Silver"])
-            self.txtCurEP.setPlainText(data["Electrum"])
-            self.txtCurGP.setPlainText(data["Gold"])
-            self.txtCurPP.setPlainText(data["Platinum"])
+            for key in self.controls:
+                control = self.controls[key]
+                if type(control) == QtWidgets.QPlainTextEdit:
+                    control.setPlainText(data[key])
+                elif type(control) == QtWidgets.QCheckBox:
+                    control.setChecked(data[key])
 
     def save_file(self):
-        values = {"TempHp": self.txtTempHp.toPlainText(), "MaxHp": self.txtMaxHp.toPlainText(),
-                  "Hp": self.txtHp.toPlainText(), "Armor": self.txtArmor.toPlainText(),
-                  "Init": self.txtInit.toPlainText(), "Speed": self.txtSpeed.toPlainText(),
-                  "DthSave1": self.chkDthSave1.isChecked(), "DthSave2": self.chkDthSave2.isChecked(),
-                  "DthFail2": self.chkDthFail2.isChecked(), "DthFail3": self.chkDthFail3.isChecked(),
-                  "DthFail1": self.chkDthFail1.isChecked(), "DthSave3": self.chkDthSave3.isChecked(),
-                  "HitDie": self.txtHitDie.toPlainText(), "TotalHitDie": self.txtTotalHitDie.toPlainText(),
-                  "StatStr": self.txtStatStr.toPlainText(), "StatDex": self.txtStatDex.toPlainText(),
-                  "ScoreStr": self.txtScoreStr.toPlainText(), "ScoreDex": self.txtScoreDex.toPlainText(),
-                  "StatCon": self.txtStatCon.toPlainText(), "ScoreCon": self.txtScoreCon.toPlainText(),
-                  "StatInt": self.txtStatInt.toPlainText(), "ScoreWis": self.txtScoreWis.toPlainText(),
-                  "StatWis": self.txtStatWis.toPlainText(), "ScoreInt": self.txtScoreInt.toPlainText(),
-                  "ScoreChar": self.txtScoreChar.toPlainText(), "StatChar": self.txtStatChar.toPlainText(),
-                  "Bonds": self.txtBonds.toPlainText(), "Personality": self.txtPersonality.toPlainText(),
-                  "Ideals": self.txtIdeals.toPlainText(), "Flaws": self.txtFlaws.toPlainText(),
-                  "Exp": self.txtExp.toPlainText(), "Align": self.txtAlign.toPlainText(),
-                  "Class": self.txtClass.toPlainText(), "Player": self.txtPlayer.toPlainText(),
-                  "Race": self.txtRace.toPlainText(), "Background": self.txtBackground.toPlainText(),
-                  "Insperation": self.txtInsperation.toPlainText(), "ProfBonus": self.txtProfBonus.toPlainText(),
-                  "SaveChar": self.txtSaveChar.toPlainText(), "SaveIntProf": self.chkSaveInt.isChecked(),
-                  "SaveDexProf": self.chkSaveDex.isChecked(), "CharName": self.txtCharName.toPlainText(),
-                  "SaveCharProf": self.chkSaveChar.isChecked(), "SaveInt": self.txtSaveInt.toPlainText(),
-                  "SaveWisProf": self.chkSaveWis.isChecked(), "SaveConProf": self.chkSaveCon.isChecked(),
-                  "SaveCon": self.txtSaveCon.toPlainText(), "SaveStr": self.txtSaveStr.toPlainText(),
-                  "SaveDex": self.txtSaveDex.toPlainText(), "SaveWis": self.txtSaveWis.toPlainText(),
-                  "SkillAcroProf": self.chkSkillAcro.isChecked(), "SkillDec": self.txtSkillDec.toPlainText(),
-                  "SkillAcro": self.txtSkillAcro.toPlainText(), "SaveStrProf": self.chkSaveStr.isChecked(),
-                  "SkillAnimProf": self.chkSkillAnim.isChecked(), "SkillArc": self.txtSkillArc.toPlainText(),
-                  "SkillAthProf": self.chkSkillAth.isChecked(), "SkillHistProf": self.chkSkillHist.isChecked(),
-                  "SkillAth": self.txtSkillAth.toPlainText(), "SkillArcProf": self.chkSkillArc.isChecked(),
-                  "SkillDecProf": self.chkSkillDec.isChecked(), "SkillHist": self.txtSkillHist.toPlainText(),
-                  "SkillInsProf": self.chkSkillIns.isChecked(), "SkillInv": self.txtSkillInv.toPlainText(),
-                  "SkillNat": self.txtSkillNat.toPlainText(), "SkillAnim": self.txtSkillAnim.toPlainText(),
-                  "SkillMedProf": self.chkSkillMed.isChecked(), "SkillPerc": self.txtSkillPerc.toPlainText(),
-                  "SkillNatProf": self.chkSkillNat.isChecked(), "SkillPercProf": self.chkSkillPerc.isChecked(),
-                  "SkillInt": self.txtSkillInt.toPlainText(), "SkillInti": self.chkSkillInti.isChecked(),
-                  "SkillMed": self.txtSkillMed.toPlainText(), "SkillInvProf": self.chkSkillInv.isChecked(),
-                  "SkillPerf": self.txtSkillPerf.toPlainText(), "SkillStealth": self.txtSkillStealth.toPlainText(),
-                  "SkillRelProf": self.chkSkillRel.isChecked(), "SkillIns": self.txtSkillIns.toPlainText(),
-                  "SkillSoh": self.txtSkillSoh.toPlainText(), "SkillSte": self.chkSkillSte.isChecked(),
-                  "SkillPersProf": self.chkSkillPers.isChecked(), "SkillSurv": self.txtSkillSurv.toPlainText(),
-                  "SkillSohProf": self.chkSkillSoh.isChecked(), "SkillSurvProf": self.chkSkillSurv.isChecked(),
-                  "SkillRel": self.txtSkillRel.toPlainText(), "SkillPerfProf": self.chkSkillPerf.isChecked(),
-                  "FeatsTraits": self.txtFeatsTraits.toPlainText(), "PasWis": self.txtPasWis.toPlainText(),
-                  "ProfLang": self.txtProfLang.toPlainText(), "SkillPers": self.txtSkillPers.toPlainText(),
-                  "Equipment": self.txtEquipment.toPlainText(), "AtkType1": self.txtAtkType1.toPlainText(),
-                  "AtkType3": self.txtAtkType3.toPlainText(), "AtkBonus3": self.txtAtkBonus3.toPlainText(),
-                  "AtkBonus2": self.txtAtkBonus2.toPlainText(), "AtkType2": self.txtAtkType2.toPlainText(),
-                  "AtkBonus1": self.txtAtkBonus1.toPlainText(), "AtkName2": self.txtAtkName2.toPlainText(),
-                  "AtkName1": self.txtAtkName1.toPlainText(), "AtkName3": self.txtAtkName3.toPlainText(),
-                  "AtksSpells": self.txtAtksSpells.toPlainText(), "Copper": self.txtCurCP.toPlainText(),
-                  "Silver": self.txtCurSP.toPlainText(),  "Electrum": self.txtCurEP.toPlainText(),
-                  "Gold": self.txtCurGP.toPlainText(), "Platinum": self.txtCurPP.toPlainText(),
-                  "version": "{0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)}
+        values = {"version": "{0}.{1}.{2}".format(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)}
+
+        for key in self.controls:
+                control = self.controls[key]
+                if type(control) == QtWidgets.QPlainTextEdit:
+                    values[key] = control.toPlainText()
+                elif type(control) == QtWidgets.QCheckBox:
+                    values[key] = control.isChecked()
 
         dialog = QFileDialog()
         dialog.setFilter(dialog.filter() | QtCore.QDir.Hidden)
@@ -479,6 +333,43 @@ class Main(QMainWindow):
         self.menuHelp.addAction(self.actionAbout)
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
+
+        self.controls = {"TempHp": self.txtTempHp, "MaxHp": self.txtMaxHp, "Hp": self.txtHp, "Init": self.txtInit,
+                         "Speed": self.txtSpeed, "Armor": self.txtArmor, "DthSave1": self.chkDthSave1,
+                         "DthSave3": self.chkDthSave3, "DthFail2": self.chkDthFail2, "DthFail3": self.chkDthFail3,
+                         "HitDie": self.txtHitDie, "TotalHitDie": self.txtTotalHitDie, "StatStr": self.txtStatStr,
+                         "ScoreDex": self.txtScoreDex, "StatDex": self.txtStatDex, "StatCon": self.txtStatCon,
+                         "ScoreInt": self.txtScoreInt, "StatInt": self.txtStatInt, "ScoreWis": self.txtScoreWis,
+                         "ScoreChar": self.txtScoreChar, "StatChar": self.txtStatChar, "Bonds": self.txtBonds,
+                         "Flaws": self.txtFlaws, "Personality": self.txtPersonality, "ProfBonus": self.txtProfBonus,
+                         "Background": self.txtBackground, "Class": self.txtClass, "Player": self.txtPlayer,
+                         "Race": self.txtRace, "SkillAcroProf": self.chkSkillAcro, "ScoreStr": self.txtScoreStr,
+                         "CharName": self.txtCharName, "SaveChar": self.txtSaveChar, "SkillHistProf": self.chkSkillHist,
+                         "SaveDexProf": self.chkSaveDex, "Insperation": self.txtInsperation, "Electrum": self.txtCurEP,
+                         "SaveCharProf": self.chkSaveChar, "SaveInt": self.txtSaveInt, "SaveIntProf": self.chkSaveInt,
+                         "SaveStr": self.txtSaveStr, "SaveWisProf": self.chkSaveWis, "SaveConProf": self.chkSaveCon,
+                         "SaveDex": self.txtSaveDex, "SaveWis": self.txtSaveWis, "SaveStrProf": self.chkSaveStr,
+                         "SkillDec": self.txtSkillDec, "SkillAcro": self.txtSkillAcro, "SkillAth": self.txtSkillAth,
+                         "SkillAnimProf": self.chkSkillAnim, "SkillArc": self.txtSkillArc, "ScoreCon": self.txtScoreCon,
+                         "SkillArcProf": self.chkSkillArc, "SkillAthProf": self.chkSkillAth, "Platinum": self.txtCurPP,
+                         "SkillDecProf": self.chkSkillDec, "SkillHist": self.txtSkillHist, "DthSave2": self.chkDthSave2,
+                         "SkillAnim": self.txtSkillAnim, "SkillInsProf": self.chkSkillIns, "DthFail1": self.chkDthFail1,
+                         "SkillInv": self.txtSkillInv, "SkillNat": self.txtSkillNat, "SkillMedProf": self.chkSkillMed,
+                         "SkillPerc": self.txtSkillPerc, "SkillPercProf": self.chkSkillPerc, "StatWis": self.txtStatWis,
+                         "SkillInti": self.chkSkillInti, "SkillNatProf": self.chkSkillNat, "Ideals": self.txtIdeals,
+                         "SkillInt": self.txtSkillInt, "SkillMed": self.txtSkillMed, "SkillInvProf": self.chkSkillInv,
+                         "SkillIns": self.txtSkillIns, "SkillPerf": self.txtSkillPerf, "Align": self.txtAlign,
+                         "SkillStealth": self.txtSkillStealth, "FeatsTraits": self.txtFeatsTraits, "Exp": self.txtExp,
+                         "SkillRelProf": self.chkSkillRel, "SkillSoh": self.txtSkillSoh, "SkillSte": self.chkSkillSte,
+                         "SkillSurvProf": self.chkSkillSurv, "SkillPersProf": self.chkSkillPers, "Gold": self.txtCurGP,
+                         "SkillSurv": self.txtSkillSurv, "SkillSohProf": self.chkSkillSoh, "SkillRel": self.txtSkillRel,
+                         "SkillPerfProf": self.chkSkillPerf, "SkillPers": self.txtSkillPers, "SaveCon": self.txtSaveCon,
+                         "PasWis": self.txtPasWis, "ProfLang": self.txtProfLang, "Equipment": self.txtEquipment,
+                         "AtkType1": self.txtAtkType1, "AtkType2": self.txtAtkType2, "AtkType3": self.txtAtkType3,
+                         "AtkBonus3": self.txtAtkBonus3, "AtkBonus2": self.txtAtkBonus2, "AtkBonus1": self.txtAtkBonus1,
+                         "AtkName2": self.txtAtkName2, "AtkName1": self.txtAtkName1, "AtkName3": self.txtAtkName3,
+                         "AtksSpells": self.txtAtksSpells, "Copper": self.txtCurCP, "Silver": self.txtCurSP,
+                          }
 
         self.retranslate_ui(self)
 

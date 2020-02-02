@@ -7,7 +7,7 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QDialog
 # Global Version Variables
 VERSION_MAJOR = 0
 VERSION_MINOR = 2
-VERSION_PATCH = 0
+VERSION_PATCH = 1
 
 
 def parse_version(ver_str):
